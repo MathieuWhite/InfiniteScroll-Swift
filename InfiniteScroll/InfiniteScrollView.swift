@@ -10,14 +10,27 @@ import UIKit
 
 /// InfiniteScrollView is a UIScrollView subclass that endlessly scrolls content,
 /// never letting the user hit the edge of the content. The scrolling is horizontal only.
-class InfiniteScrollView: UIScrollView
+class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
 {
     // MARK: - Variables
     
-    var views: [UIView]?
-    
+    /// The content view of the scroll view. It is the only subview it contains.
     var contentView: UIView?
-        
+
+    /// An array containing the visible items in the scroll view.
+    var visibleItems: [UIView] = []
+    
+    /// The current page being displayed on the scroll view.
+    var currentPage: Int = 0
+    
+    /// An array containing all of the items in the scroll view.
+    private var internalItems: [UIView] = []
+
+    private var leftViewFrame = CGRectZero
+    private var centerViewFrame = CGRectZero
+    private var rightViewFrame = CGRectZero
+    
+    
     // MARK: - Initialization
     
     required init?(coder aDecoder: NSCoder)
@@ -29,6 +42,13 @@ class InfiniteScrollView: UIScrollView
     override init(frame: CGRect)
     {
         super.init(frame: frame)
+        self.setupInfiniteScrollView()
+    }
+    
+    init(items: [UIView])
+    {
+        super.init(frame: CGRectZero)
+        self.internalItems = items
         self.setupInfiniteScrollView()
     }
     
@@ -48,7 +68,11 @@ class InfiniteScrollView: UIScrollView
         self.showsVerticalScrollIndicator = false
         //self.showsHorizontalScrollIndicator = false
         
+        // Enable paging on the scroll view
         self.pagingEnabled = true
+        
+        // Disable bouncing on the scroll view
+        self.bounces = false
         
         // Initialize the content view
         let contentView = UIView(frame: CGRectMake(0.0, 0.0, self.contentSize.width, self.contentSize.height))
@@ -58,52 +82,31 @@ class InfiniteScrollView: UIScrollView
         
         // Set the content view to its variable
         self.contentView = contentView
+        
+        // Set the delegate of the scroll view
+        self.delegate = self
+        
+        self.leftViewFrame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))
+        self.centerViewFrame = CGRectMake(CGRectGetWidth(self.bounds), 0.0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))
+        self.rightViewFrame = CGRectMake(CGRectGetWidth(self.bounds) * 2.0, 0.0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))
     }
     
     
     // MARK: - Instance Methods
- 
-    override func layoutSubviews()
-    {
-        super.layoutSubviews()
-        
-        // Called at every frame of scrolling
-        self.recenterIfNecessary()
-    }
-    
     
     func setItems(items: [UIView])
     {
-        if let views = self.views
-        {
-            for view in views
-            {
-                view.removeFromSuperview()
-            }
-        }
-
-        let viewWidth = CGRectGetWidth(self.bounds)
-
-            for (index, view) in items.enumerate()
-            {
-                var viewFrame = self.bounds
-
-                viewFrame.origin.x = viewWidth * CGFloat(index)
-
-                view.frame = viewFrame
-
-                self.contentView?.addSubview(view)
-            }
-
+        // Reference the items
+        self.internalItems = items
         
-        self.views = items
-
-        let contentSize = CGSizeMake(viewWidth * CGFloat(items.count), self.bounds.height)
-
-        self.contentSize = contentSize
+        // Set the current page
+        self.currentPage = 0
         
+        // Center the content view on the middle page
         self.contentOffset = CGPointMake(CGRectGetWidth(self.bounds), self.contentOffset.y)
-
+        
+        // Update the pages
+        self.updatePagingIfNeeded()
     }
     
     
@@ -113,29 +116,81 @@ class InfiniteScrollView: UIScrollView
      This method recenters the scroll view's content size if necessary. 
      The recentering occurs if the offset ends up at the edge of the content.
      */
-    func recenterIfNecessary()
+    private func recenterIfNecessary()
     {
         // Get the current offset of the content
-        let currentOffset = self.contentOffset
+        let currentOffsetX = self.contentOffset.x
         
-        // Get the width of the content
-        let contentWidth = self.contentSize.width
-        
-        // Calculate the x offset that gets the center point of where the content should be
-        let centerOffsetX = (contentWidth - CGRectGetWidth(self.bounds)) / 2.0
-        
-        // Get our current distance (where we are now) from the center (where we want to be)
-        let distanceFromCenter = fabs(currentOffset.x - centerOffsetX)
+        // Get the width of a single page
+        let pageWidth = CGRectGetWidth(self.bounds)
         
         // If the distance from the center is far enough, re center the content size
         // This distance is also arbitrary, it can be anything. The smaller the distance
         // the more recentering occurs. Half the content width should be good enough.
-        if (distanceFromCenter > (contentWidth / 3.0))
+        if (currentOffsetX >= pageWidth)
         {
-            self.contentOffset = CGPointMake(centerOffsetX, currentOffset.y)
+            // Center the content view on the middle page
+            self.contentOffset = CGPointMake(CGRectGetWidth(self.bounds), self.contentOffset.y)
             
-            // TODO: something with the views here?
+            self.currentPage = (self.currentPage < self.internalItems.count - 1) ? self.currentPage + 1 : 0
+            
+            // Update the left and right views if needs
+            self.updatePagingIfNeeded()
         }
+    }
+    
+    
+    private func updatePagingIfNeeded()
+    {
+        // Get the item for our current page
+        
+        let leftView = (self.currentPage > 0) ? self.internalItems[self.currentPage - 1] : self.internalItems.last!
+
+        
+        let centerView = self.internalItems[self.currentPage]
+        
+        let rightView = (self.currentPage < self.internalItems.count - 1) ? self.internalItems[self.currentPage + 1] : self.internalItems[0]
+
+        
+        leftView.frame = self.leftViewFrame
+        centerView.frame = self.centerViewFrame
+        rightView.frame = self.rightViewFrame
+        
+        
+        // Remove all the views from the content view
+        for view in self.visibleItems
+        {
+            view.removeFromSuperview()
+        }
+        
+        // Remove all the visible items
+        self.visibleItems.removeAll()
+        
+        self.contentView?.addSubview(leftView)
+        self.contentView?.addSubview(centerView)
+        self.contentView?.addSubview(rightView)
+        
+        self.visibleItems.append(leftView)
+        self.visibleItems.append(centerView)
+        self.visibleItems.append(rightView)
+        
+    }
+    
+    
+    // MARK: - UIScrollViewDelegate Methods
+    
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool)
+    {
+        if (decelerate)
+        {
+            self.userInteractionEnabled = false
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView)
+    {
+        self.recenterIfNecessary()
+        scrollView.userInteractionEnabled = true
     }
 
 }
