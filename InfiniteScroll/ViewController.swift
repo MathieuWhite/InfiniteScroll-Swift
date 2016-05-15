@@ -27,12 +27,18 @@ class ViewController: UIViewController {
         let third = UIView(frame: viewFrame)
         third.backgroundColor = UIColor.blueColor()
         
+        let fourth = UIView(frame: viewFrame)
+        fourth.backgroundColor = UIColor.yellowColor()
+        
+        let fifth = UIView(frame: viewFrame)
+        fifth.backgroundColor = UIColor.purpleColor()
+        
         
         let scrollView = InfiniteScrollView(frame: CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) / 3.0))
         
         self.view.addSubview(scrollView)
         
-        scrollView.setItems([first, second, third])
+        scrollView.setItems([first, second, third, fourth, fifth])
     }
 
     override func didReceiveMemoryWarning() {

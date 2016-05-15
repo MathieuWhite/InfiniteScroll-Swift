@@ -127,12 +127,19 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
         // If the distance from the center is far enough, re center the content size
         // This distance is also arbitrary, it can be anything. The smaller the distance
         // the more recentering occurs. Half the content width should be good enough.
-        if (currentOffsetX >= pageWidth)
+        if (currentOffsetX >= pageWidth || currentOffsetX <= 0.0)
         {
             // Center the content view on the middle page
             self.contentOffset = CGPointMake(CGRectGetWidth(self.bounds), self.contentOffset.y)
             
-            self.currentPage = (self.currentPage < self.internalItems.count - 1) ? self.currentPage + 1 : 0
+            if (currentOffsetX >= pageWidth)
+            {
+                self.currentPage = (self.currentPage < self.internalItems.count - 1) ? self.currentPage + 1 : 0
+            }
+            else
+            {
+                self.currentPage = (self.currentPage > 0) ? self.currentPage - 1 : self.internalItems.count - 1
+            }
             
             // Update the left and right views if needs
             self.updatePagingIfNeeded()
