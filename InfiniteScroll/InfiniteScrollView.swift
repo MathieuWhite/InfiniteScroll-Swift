@@ -124,10 +124,10 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
         // Get the width of a single page
         let pageWidth = CGRectGetWidth(self.bounds)
         
-        // If the distance from the center is far enough, re center the content size
-        // This distance is also arbitrary, it can be anything. The smaller the distance
-        // the more recentering occurs. Half the content width should be good enough.
-        if (currentOffsetX >= pageWidth || currentOffsetX <= 0.0)
+        // If the offset in the X dimension is larger than one page width, 
+        // the page moved forward. If the offset is smaller or equal to 0,
+        // the page moved backwards. Recenter the content and update the pages.
+        if (currentOffsetX > pageWidth || currentOffsetX <= 0.0)
         {
             // Center the content view on the middle page
             self.contentOffset = CGPointMake(CGRectGetWidth(self.bounds), self.contentOffset.y)
