@@ -81,24 +81,29 @@ class InfiniteScrollView: UIScrollView
                 view.removeFromSuperview()
             }
         }
-        
-        items[0].frame = self.bounds
-        items[0].frame.origin.x = CGRectGetWidth(self.bounds)
-        
-        items[1].frame = self.bounds
-        items[1].frame.origin.x = CGRectGetWidth(self.bounds) * 2.0
-        
-        items[2].frame = self.bounds
-        items[2].frame.origin.x = 0.0
-        
-        self.contentView?.addSubview(items[0])
-        self.contentView?.addSubview(items[1])
-        self.contentView?.addSubview(items[2])
+
+        let viewWidth = CGRectGetWidth(self.bounds)
+
+            for (index, view) in items.enumerate()
+            {
+                var viewFrame = self.bounds
+
+                viewFrame.origin.x = viewWidth * CGFloat(index)
+
+                view.frame = viewFrame
+
+                self.contentView?.addSubview(view)
+            }
 
         
         self.views = items
+
+        let contentSize = CGSizeMake(viewWidth * CGFloat(items.count), self.bounds.height)
+
+        self.contentSize = contentSize
         
         self.contentOffset = CGPointMake(CGRectGetWidth(self.bounds), self.contentOffset.y)
+
     }
     
     

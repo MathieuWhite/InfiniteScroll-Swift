@@ -13,19 +13,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
-        let first = UIView(frame: self.view.bounds)
+
+        var viewFrame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) / 3.0)
+
+        let screenWidth = CGRectGetWidth(self.view.bounds)
+
+        let first = UIView(frame: viewFrame)
         first.backgroundColor = UIColor.redColor()
-        
-        let second = UIView(frame: self.view.bounds)
+
+        viewFrame.origin.x = screenWidth
+
+        let second = UIView(frame: viewFrame)
         second.backgroundColor = UIColor.greenColor()
-        
-        let third = UIView(frame: self.view.bounds)
+
+        viewFrame.origin.x = screenWidth * 2
+
+        let third = UIView(frame: viewFrame)
         third.backgroundColor = UIColor.blueColor()
         
         
-        let scrollView = InfiniteScrollView(frame: self.view.bounds)
+        let scrollView = InfiniteScrollView(frame: CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds) / 3.0))
         
         self.view.addSubview(scrollView)
         
