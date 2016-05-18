@@ -8,15 +8,30 @@
 
 import UIKit
 
+protocol InfiniteScrollViewDelegate: UIScrollViewDelegate
+{
+    /**
+     This method tells the delegate that current page on the
+     scroll view has been updated.
+     
+     - parameter scrollView: the scroll view whose page changed
+     - parameter pageIndex:  the new page of the scroll view
+     */
+    func scrollView(scrollView: UIScrollView, didUpdateCurrentPage pageIndex: Int)
+}
+
+// Optional InfiniteScrollViewDelegate methods
+extension InfiniteScrollViewDelegate
+{
+    func scrollView(scrollView: UIScrollView, didUpdateCurrentPage pageIndex: Int) { }
+}
+
 /// InfiniteScrollView is a UIScrollView subclass that endlessly scrolls content,
 /// never letting the user hit the edge of the content. The scrolling is horizontal only.
 class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
 {
     // MARK: - Variables
     
-    /// The content view of the scroll view. It is the only subview it contains.
-    var contentView: UIView?
-
     /// An array containing the visible items in the scroll view.
     var visibleItems: [UIView] = []
     
@@ -25,10 +40,18 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
     
     /// An array containing all of the items in the scroll view.
     private var internalItems: [UIView] = []
-
-    private var leftViewFrame = CGRectZero
-    private var centerViewFrame = CGRectZero
-    private var rightViewFrame = CGRectZero
+    
+    /// The frame of the view on the previous page.
+    private var previousViewFrame = CGRectZero
+    
+    /// The frame of the view on the current page.
+    private var currentViewFrame = CGRectZero
+    
+    /// The frame of the view on the next page.
+    private var nextViewFrame = CGRectZero
+    
+    /// The infinite scroll view delegate of the scroll view.
+    weak var pagingDelegate: InfiniteScrollViewDelegate?
     
     
     // MARK: - Initialization
@@ -48,8 +71,8 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
     init(items: [UIView])
     {
         super.init(frame: CGRectZero)
-        self.internalItems = items
         self.setupInfiniteScrollView()
+        self.setItems(items)
     }
     
     convenience init()
@@ -59,14 +82,9 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
     
     private func setupInfiniteScrollView()
     {
-        // Set a content size that is 3 times the width of the scroll view, and equal height
-        // NOTE: The width doesn't really matter, it can be as big as we want because
-        // we won't ever be filling it's entire content.
-        self.contentSize = CGSizeMake(CGRectGetWidth(self.bounds) * 3.0, CGRectGetHeight(self.bounds))
-        
         // Disable the scroll indicators
         self.showsVerticalScrollIndicator = false
-        //self.showsHorizontalScrollIndicator = false
+        self.showsHorizontalScrollIndicator = false
         
         // Enable paging on the scroll view
         self.pagingEnabled = true
@@ -74,46 +92,73 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
         // Disable bouncing on the scroll view
         self.bounces = false
         
-        // Initialize the content view
-        let contentView = UIView(frame: CGRectMake(0.0, 0.0, self.contentSize.width, self.contentSize.height))
-        
-        // Add the content view as a subview of the scroll view
-        self.addSubview(contentView)
-        
-        // Set the content view to its variable
-        self.contentView = contentView
-        
         // Set the delegate of the scroll view
         self.delegate = self
-        
-        self.leftViewFrame = CGRectMake(0.0, 0.0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))
-        self.centerViewFrame = CGRectMake(CGRectGetWidth(self.bounds), 0.0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))
-        self.rightViewFrame = CGRectMake(CGRectGetWidth(self.bounds) * 2.0, 0.0, CGRectGetWidth(self.bounds), CGRectGetHeight(self.bounds))
     }
     
     
     // MARK: - Instance Methods
     
+    /**
+     This method sets the current items on the scroll view.
+     
+     - parameter items: the views to be placed in the scroll view
+     */
     func setItems(items: [UIView])
     {
+        // Mainly for auto layout, ask the scroll view to size itself
+        self.setNeedsLayout()
+        self.layoutIfNeeded()
+        
+        // Get the width of the scroll view
+        let currentWidth: CGFloat = CGRectGetWidth(self.bounds)
+        
+        // Get the height of the scroll view
+        let currentHeight: CGFloat = CGRectGetHeight(self.bounds)
+        
+        // Calculate our factor to multiply the content's width by
+        let multiplier: CGFloat = (items.count > 1) ? 3.0 : 1.0
+        
         // Reference the items
         self.internalItems = items
         
-        // Set the current page
+        // Reset the current page
         self.currentPage = 0
         
         // Center the content view on the middle page
-        self.contentOffset = CGPointMake(CGRectGetWidth(self.bounds), self.contentOffset.y)
+        self.contentOffset = CGPointMake(currentWidth, self.contentOffset.y)
+        
+        // Set the new content size
+        self.contentSize = CGSizeMake(currentWidth * multiplier, CGRectGetHeight(self.bounds))
+        
+        // Set the frames for the different pages in the scroll view
+        self.previousViewFrame = CGRectMake(0.0, 0.0, currentWidth, currentHeight)
+        self.currentViewFrame = CGRectMake(currentWidth, 0.0, currentWidth, currentHeight)
+        self.nextViewFrame = CGRectMake(currentWidth * 2.0, 0.0, currentWidth, currentHeight)
         
         // Update the pages
         self.updatePagingIfNeeded()
     }
     
     
+    /**
+     Makes an exact copy of a UIView
+     
+     - parameter source: view to copy
+     
+     - returns: a copy of the source view
+     */
+    private func copyView(source: UIView) -> UIView
+    {
+        let archive = NSKeyedArchiver.archivedDataWithRootObject(source)
+        return NSKeyedUnarchiver.unarchiveObjectWithData(archive) as! UIView
+    }
+    
+    
     // MARK: - Layout Methods
     
     /**
-     This method recenters the scroll view's content size if necessary. 
+     This method recenters the scroll view's content size if necessary.
      The recentering occurs if the offset ends up at the edge of the content.
      */
     private func recenterIfNecessary()
@@ -124,7 +169,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
         // Get the width of a single page
         let pageWidth = CGRectGetWidth(self.bounds)
         
-        // If the offset in the X dimension is larger than one page width, 
+        // If the offset in the X dimension is larger than one page width,
         // the page moved forward. If the offset is smaller or equal to 0,
         // the page moved backwards. Recenter the content and update the pages.
         if (currentOffsetX > pageWidth || currentOffsetX <= 0.0)
@@ -146,41 +191,76 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
         }
     }
     
-    
+    /**
+     This method updates the current page, if needed. After setting
+     the `currentPage` property, you can call this method to set that
+     page as the current view.
+     */
     private func updatePagingIfNeeded()
     {
-        // Get the item for our current page
-        
-        let leftView = (self.currentPage > 0) ? self.internalItems[self.currentPage - 1] : self.internalItems.last!
-
-        
-        let centerView = self.internalItems[self.currentPage]
-        
-        let rightView = (self.currentPage < self.internalItems.count - 1) ? self.internalItems[self.currentPage + 1] : self.internalItems[0]
-
-        
-        leftView.frame = self.leftViewFrame
-        centerView.frame = self.centerViewFrame
-        rightView.frame = self.rightViewFrame
-        
-        
-        // Remove all the views from the content view
-        for view in self.visibleItems
-        {
+        // Remove all the views from the scroll view
+        for view in self.visibleItems {
             view.removeFromSuperview()
         }
         
-        // Remove all the visible items
+        // Remove all the visible items from the array
         self.visibleItems.removeAll()
         
-        self.contentView?.addSubview(leftView)
-        self.contentView?.addSubview(centerView)
-        self.contentView?.addSubview(rightView)
+        // If we have no items to display, get out
+        if (self.internalItems.isEmpty) {
+            return
+        }
         
-        self.visibleItems.append(leftView)
-        self.visibleItems.append(centerView)
-        self.visibleItems.append(rightView)
+        // Count our internal items
+        let numberOfItems = self.internalItems.count
         
+        // Get the view for the current page, and set its frame based on the number of items
+        let currentView = self.internalItems[self.currentPage]
+        currentView.frame = (numberOfItems > 1) ? self.currentViewFrame : self.previousViewFrame
+        
+        // Reference for the item in our previous page
+        var previousView: UIView?
+        
+        // Reference for the item in our next page
+        var nextView: UIView?
+        
+        
+        // Set up our view for the previous and next pages
+        if (numberOfItems == 2) {
+            // If we only have 2 items,
+            // the previous and next pages will be the same
+            previousView = (self.currentPage == 0) ? self.internalItems.last! : self.internalItems.first!
+            nextView = self.copyView(previousView!)
+        }
+        else if (numberOfItems > 2) {
+            // We have more than 2 items,
+            // display the previous and next pages
+            previousView = (self.currentPage > 0) ? self.internalItems[self.currentPage - 1] : self.internalItems.last!
+            nextView = (self.currentPage < self.internalItems.count - 1) ? self.internalItems[self.currentPage + 1] : self.internalItems.first!
+        }
+        
+        // Set up the frame for the previous and next pages
+        previousView?.frame = self.previousViewFrame
+        nextView?.frame = self.nextViewFrame
+        
+        
+        // Add our views to the scroll view and the visible items array
+        self.addSubview(currentView)
+        self.visibleItems.append(currentView)
+        
+        if (previousView != nil) {
+            self.addSubview(previousView!)
+            self.visibleItems.append(previousView!)
+        }
+        
+        if (nextView != nil) {
+            self.addSubview(nextView!)
+            self.visibleItems.append(nextView!)
+        }
+        
+        
+        // Notifiy the delegate that the current page has changed
+        self.pagingDelegate?.scrollView(self, didUpdateCurrentPage: self.currentPage)
     }
     
     
@@ -199,5 +279,5 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
         self.recenterIfNecessary()
         scrollView.userInteractionEnabled = true
     }
-
+    
 }
