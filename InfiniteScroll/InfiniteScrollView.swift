@@ -8,8 +8,7 @@
 
 import UIKit
 
-protocol InfiniteScrollViewDelegate: UIScrollViewDelegate
-{
+protocol InfiniteScrollViewDelegate: UIScrollViewDelegate {
     /**
      This method tells the delegate that current page on the
      scroll view has been updated.
@@ -21,15 +20,14 @@ protocol InfiniteScrollViewDelegate: UIScrollViewDelegate
 }
 
 // Optional InfiniteScrollViewDelegate methods
-extension InfiniteScrollViewDelegate
-{
+extension InfiniteScrollViewDelegate {
     func scrollView(scrollView: UIScrollView, didUpdateCurrentPage pageIndex: Int) { }
 }
 
 /// InfiniteScrollView is a UIScrollView subclass that endlessly scrolls content,
 /// never letting the user hit the edge of the content. The scrolling is horizontal only.
-class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
-{
+class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
+    
     // MARK: - Variables
     
     /// An array containing the visible items in the scroll view.
@@ -60,32 +58,27 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
     
     // MARK: - Initialization
     
-    required init?(coder aDecoder: NSCoder)
-    {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.setupInfiniteScrollView()
     }
     
-    override init(frame: CGRect)
-    {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         self.setupInfiniteScrollView()
     }
     
-    init(items: [UIView])
-    {
+    init(items: [UIView]) {
         super.init(frame: CGRectZero)
         self.setupInfiniteScrollView()
         self.setItems(items)
     }
     
-    convenience init()
-    {
+    convenience init() {
         self.init(frame: CGRectZero)
     }
     
-    private func setupInfiniteScrollView()
-    {
+    private func setupInfiniteScrollView() {
         // Disable the scroll indicators
         self.showsVerticalScrollIndicator = false
         self.showsHorizontalScrollIndicator = false
@@ -108,8 +101,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
      
      - parameter items: the views to be placed in the scroll view
      */
-    func setItems(items: [UIView])
-    {
+    func setItems(items: [UIView]) {
         // Mainly for auto layout, ask the scroll view to size itself
         self.setNeedsLayout()
         self.layoutIfNeeded()
@@ -161,12 +153,12 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
         self.userInteractionEnabled = false
         
         UIView.animateWithDuration(animated ? self.animationDuration : 0.0,
-                                   animations: {
-                                    self.setContentOffset(self.nextViewFrame.origin, animated: false)
+            animations: {
+                self.setContentOffset(self.nextViewFrame.origin, animated: false)
             },
-                                   completion: {(finished) -> Void in
-                                    self.recenterIfNecessary()
-                                    self.userInteractionEnabled = true
+            completion: {(finished) -> Void in
+                self.recenterIfNecessary()
+                self.userInteractionEnabled = true
         })
     }
     
@@ -188,27 +180,13 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
         self.userInteractionEnabled = false
         
         UIView.animateWithDuration(animated ? self.animationDuration : 0.0,
-                                   animations: {
-                                    self.setContentOffset(self.previousViewFrame.origin, animated: false)
+            animations: {
+                self.setContentOffset(self.previousViewFrame.origin, animated: false)
             },
-                                   completion: {(finished) -> Void in
-                                    self.recenterIfNecessary()
-                                    self.userInteractionEnabled = true
+            completion: {(finished) -> Void in
+                self.recenterIfNecessary()
+                self.userInteractionEnabled = true
         })
-    }
-    
-    
-    /**
-     Makes an exact copy of a UIView
-     
-     - parameter source: view to copy
-     
-     - returns: a copy of the source view
-     */
-    private func copyView(source: UIView) -> UIView
-    {
-        let archive = NSKeyedArchiver.archivedDataWithRootObject(source)
-        return NSKeyedUnarchiver.unarchiveObjectWithData(archive) as! UIView
     }
     
     
@@ -218,8 +196,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
      This method recenters the scroll view's content size if necessary.
      The recentering occurs if the offset ends up at the edge of the content.
      */
-    private func recenterIfNecessary()
-    {
+    private func recenterIfNecessary() {
         // Get the current offset of the content
         let currentOffsetX = self.contentOffset.x
         
@@ -229,17 +206,14 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
         // If the offset in the X dimension is larger than one page width,
         // the page moved forward. If the offset is smaller or equal to 0,
         // the page moved backwards. Recenter the content and update the pages.
-        if (currentOffsetX > pageWidth || currentOffsetX <= 0.0)
-        {
+        if (currentOffsetX > pageWidth || currentOffsetX <= 0.0) {
             // Center the content view on the middle page
             self.contentOffset = CGPointMake(CGRectGetWidth(self.bounds), self.contentOffset.y)
             
-            if (currentOffsetX >= pageWidth)
-            {
+            if (currentOffsetX >= pageWidth) {
                 self.currentPage = (self.currentPage < self.internalItems.count - 1) ? self.currentPage + 1 : 0
             }
-            else
-            {
+            else {
                 self.currentPage = (self.currentPage > 0) ? self.currentPage - 1 : self.internalItems.count - 1
             }
             
@@ -253,8 +227,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
      the `currentPage` property, you can call this method to set that
      page as the current view.
      */
-    private func updatePagingIfNeeded()
-    {
+    private func updatePagingIfNeeded() {
         // Remove all the views from the scroll view
         for view in self.visibleItems {
             view.removeFromSuperview()
@@ -287,7 +260,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
             // If we only have 2 items,
             // the previous and next pages will be the same
             previousView = (self.currentPage == 0) ? self.internalItems.last! : self.internalItems.first!
-            nextView = self.copyView(previousView!)
+            nextView = previousView?.copyView()
         }
         else if (numberOfItems > 2) {
             // We have more than 2 items,
@@ -323,18 +296,38 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
     
     // MARK: - UIScrollViewDelegate Methods
     
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool)
-    {
-        if (decelerate)
-        {
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if (decelerate) {
             self.userInteractionEnabled = false
         }
+        
+        self.pagingDelegate?.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
     }
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView)
-    {
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         self.recenterIfNecessary()
         scrollView.userInteractionEnabled = true
     }
     
+    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+        self.pagingDelegate?.scrollViewWillBeginDragging?(scrollView)
+    }
+    
 }
+
+
+// MARK: - UIView Extension
+
+extension UIView {
+    
+    /**
+     This method makes a copy of the view that invokes it.
+     
+     - returns: a copy of the view
+     */
+    func copyView() -> UIView {
+        let archive = NSKeyedArchiver.archivedDataWithRootObject(self)
+        return NSKeyedUnarchiver.unarchiveObjectWithData(archive) as! UIView
+    }
+}
+
