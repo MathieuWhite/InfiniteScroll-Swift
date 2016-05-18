@@ -38,6 +38,10 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
     /// The current page being displayed on the scroll view.
     var currentPage: Int = 0
     
+    /// The animation duration for the auto scrolling.
+    /// The default duration is 1.0.
+    var animationDuration: NSTimeInterval = 1.0
+    
     /// An array containing all of the items in the scroll view.
     private var internalItems: [UIView] = []
     
@@ -138,6 +142,59 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate
         
         // Update the pages
         self.updatePagingIfNeeded()
+    }
+    
+    /**
+     This method moves the scroll view over to the next page.
+     Set the `animationDuration` property to control the speed of the animation.
+     
+     - parameter animated: true to animate the change, false otherwise
+     */
+    func scrollToNextPage(animated animated: Bool)
+    {
+        // Don't animate if we have less than 2 items
+        if (self.internalItems.count < 2) {
+            return
+        }
+        
+        // Disable the interaction until the animation is completed.
+        self.userInteractionEnabled = false
+        
+        UIView.animateWithDuration(animated ? self.animationDuration : 0.0,
+                                   animations: {
+                                    self.setContentOffset(self.nextViewFrame.origin, animated: false)
+            },
+                                   completion: {(finished) -> Void in
+                                    self.recenterIfNecessary()
+                                    self.userInteractionEnabled = true
+        })
+    }
+    
+    
+    /**
+     This method moves the scroll view back to the previous page.
+     Set the `animationDuration` property to control the speed of the animation.
+     
+     - parameter animated: true to animate the change, false otherwise
+     */
+    func scrollToPreviousPage(animated animated: Bool)
+    {
+        // Don't animate if we have less than 2 items
+        if (self.internalItems.count < 2) {
+            return
+        }
+        
+        // Disable the interaction until the animation is completed.
+        self.userInteractionEnabled = false
+        
+        UIView.animateWithDuration(animated ? self.animationDuration : 0.0,
+                                   animations: {
+                                    self.setContentOffset(self.previousViewFrame.origin, animated: false)
+            },
+                                   completion: {(finished) -> Void in
+                                    self.recenterIfNecessary()
+                                    self.userInteractionEnabled = true
+        })
     }
     
     
