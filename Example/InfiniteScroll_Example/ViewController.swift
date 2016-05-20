@@ -8,6 +8,8 @@
 
 import UIKit
 
+import MHInfiniteScroll
+
 class ViewController: UIViewController, InfiniteScrollViewDelegate {
 
     weak var scrollView: InfiniteScrollView?
