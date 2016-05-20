@@ -12,7 +12,6 @@
 		4E0DB5211CE75814000D59B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E0DB51F1CE75814000D59B7 /* Main.storyboard */; };
 		4E0DB5231CE75814000D59B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E0DB5221CE75814000D59B7 /* Assets.xcassets */; };
 		4E0DB5261CE75814000D59B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E0DB5241CE75814000D59B7 /* LaunchScreen.storyboard */; };
-		4E0DB52E1CE75833000D59B7 /* InfiniteScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0DB52D1CE75833000D59B7 /* InfiniteScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +22,6 @@
 		4E0DB5221CE75814000D59B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E0DB5251CE75814000D59B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E0DB5271CE75814000D59B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E0DB52D1CE75833000D59B7 /* InfiniteScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +60,6 @@
 				4E0DB5221CE75814000D59B7 /* Assets.xcassets */,
 				4E0DB5241CE75814000D59B7 /* LaunchScreen.storyboard */,
 				4E0DB5271CE75814000D59B7 /* Info.plist */,
-				4E0DB52D1CE75833000D59B7 /* InfiniteScrollView.swift */,
 			);
 			path = InfiniteScroll;
 			sourceTree = "<group>";
@@ -93,6 +90,7 @@
 		4E0DB5101CE75814000D59B7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = MH;
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Mathieu White";
@@ -138,7 +136,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E0DB52E1CE75833000D59B7 /* InfiniteScrollView.swift in Sources */,
 				4E0DB51E1CE75814000D59B7 /* ViewController.swift in Sources */,
 				4E0DB51C1CE75814000D59B7 /* AppDelegate.swift in Sources */,
 			);
@@ -292,6 +289,7 @@
 				4E0DB52C1CE75814000D59B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
