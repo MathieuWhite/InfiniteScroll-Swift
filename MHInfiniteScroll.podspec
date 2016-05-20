@@ -11,10 +11,6 @@ Pod::Spec.new do |s|
   s.version          = "0.1.0"
   s.summary          = "An infinite horizontal UIScrollView subclass with paging for Swift."
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
   s.homepage         = "https://github.com/MathieuWhite/InifinteScroll-Swift"
   s.screenshots     = "https://raw.githubusercontent.com/MathieuWhite/InifinteScroll-Swift/master/demo.gif"
   s.license          = 'MIT'
