@@ -1,0 +1,16 @@
+PODS:
+  - MHInfiniteScroll (0.1.0)
+
+DEPENDENCIES:
+  - MHInfiniteScroll (from `../`)
+
+EXTERNAL SOURCES:
+  MHInfiniteScroll:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MHInfiniteScroll: 24761a4cf9b42ddccd6b2d719672e55faa1cfda3
+
+PODFILE CHECKSUM: 57bc3928aa9014586c68f8e42139779f03824106
+
+COCOAPODS: 1.0.0

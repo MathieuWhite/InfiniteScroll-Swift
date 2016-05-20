@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B5B97B8A581D4B48689F6DE /* Pods_InfiniteScroll_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E5C03A2437AA5E48191BFC7 /* Pods_InfiniteScroll_Example.framework */; };
 		4E0DB51C1CE75814000D59B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0DB51B1CE75814000D59B7 /* AppDelegate.swift */; };
 		4E0DB51E1CE75814000D59B7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0DB51D1CE75814000D59B7 /* ViewController.swift */; };
 		4E0DB5211CE75814000D59B7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E0DB51F1CE75814000D59B7 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11079BA51E734A9E4838FAEE /* Pods-InfiniteScroll_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfiniteScroll_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InfiniteScroll_Example/Pods-InfiniteScroll_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		4E0DB5181CE75814000D59B7 /* InfiniteScroll_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteScroll_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E0DB51B1CE75814000D59B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E0DB51D1CE75814000D59B7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		4E0DB5221CE75814000D59B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E0DB5251CE75814000D59B7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E0DB5271CE75814000D59B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E5C03A2437AA5E48191BFC7 /* Pods_InfiniteScroll_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InfiniteScroll_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9047D7C681A25CF3C7CB5C2 /* Pods-InfiniteScroll_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfiniteScroll_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-InfiniteScroll_Example/Pods-InfiniteScroll_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B5B97B8A581D4B48689F6DE /* Pods_InfiniteScroll_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14B4EFF15B93FA7F18A6CE31 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				11079BA51E734A9E4838FAEE /* Pods-InfiniteScroll_Example.debug.xcconfig */,
+				C9047D7C681A25CF3C7CB5C2 /* Pods-InfiniteScroll_Example.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4E0DB50F1CE75814000D59B7 = {
 			isa = PBXGroup;
 			children = (
 				4E0DB51A1CE75814000D59B7 /* InfiniteScroll_Example */,
 				4E0DB5191CE75814000D59B7 /* Products */,
+				14B4EFF15B93FA7F18A6CE31 /* Pods */,
+				973671829C13C9ADFDE3653A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = InfiniteScroll_Example;
 			sourceTree = "<group>";
 		};
+		973671829C13C9ADFDE3653A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4E5C03A2437AA5E48191BFC7 /* Pods_InfiniteScroll_Example.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E0DB52A1CE75814000D59B7 /* Build configuration list for PBXNativeTarget "InfiniteScroll_Example" */;
 			buildPhases = (
+				D0F6755F78F83706D69C7784 /* 📦 Check Pods Manifest.lock */,
 				4E0DB5141CE75814000D59B7 /* Sources */,
 				4E0DB5151CE75814000D59B7 /* Frameworks */,
 				4E0DB5161CE75814000D59B7 /* Resources */,
+				24E2D0708EB39097B927CCE9 /* 📦 Embed Pods Frameworks */,
+				EFB234394CCEFE11983440A5 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24E2D0708EB39097B927CCE9 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InfiniteScroll_Example/Pods-InfiniteScroll_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0F6755F78F83706D69C7784 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EFB234394CCEFE11983440A5 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-InfiniteScroll_Example/Pods-InfiniteScroll_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4E0DB5141CE75814000D59B7 /* Sources */ = {
@@ -250,6 +325,7 @@
 		};
 		4E0DB52B1CE75814000D59B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11079BA51E734A9E4838FAEE /* Pods-InfiniteScroll_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = InfiniteScroll_Example/Info.plist;
@@ -262,6 +338,7 @@
 		};
 		4E0DB52C1CE75814000D59B7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9047D7C681A25CF3C7CB5C2 /* Pods-InfiniteScroll_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = InfiniteScroll_Example/Info.plist;
