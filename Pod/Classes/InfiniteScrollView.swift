@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol InfiniteScrollViewDelegate: UIScrollViewDelegate {
+public protocol InfiniteScrollViewDelegate: UIScrollViewDelegate {
     /**
      This method tells the delegate that current page on the
      scroll view has been updated.
@@ -26,7 +26,7 @@ extension InfiniteScrollViewDelegate {
 
 /// InfiniteScrollView is a UIScrollView subclass that endlessly scrolls content,
 /// never letting the user hit the edge of the content. The scrolling is horizontal only.
-class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
+public class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
     
     // MARK: - Variables
     
@@ -53,22 +53,22 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
     private var nextViewFrame = CGRectZero
     
     /// The infinite scroll view delegate of the scroll view.
-    weak var pagingDelegate: InfiniteScrollViewDelegate?
+    public weak var pagingDelegate: InfiniteScrollViewDelegate?
     
     
     // MARK: - Initialization
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.setupInfiniteScrollView()
     }
     
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.setupInfiniteScrollView()
     }
     
-    init(items: [UIView]) {
+    public init(items: [UIView]) {
         super.init(frame: CGRectZero)
         self.setupInfiniteScrollView()
         self.setItems(items)
@@ -101,7 +101,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
      
      - parameter items: the views to be placed in the scroll view
      */
-    func setItems(items: [UIView]) {
+    public func setItems(items: [UIView]) {
         // Mainly for auto layout, ask the scroll view to size itself
         self.setNeedsLayout()
         self.layoutIfNeeded()
@@ -142,7 +142,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
      
      - parameter animated: true to animate the change, false otherwise
      */
-    func scrollToNextPage(animated animated: Bool)
+    public func scrollToNextPage(animated animated: Bool)
     {
         // Don't animate if we have less than 2 items
         if (self.internalItems.count < 2) {
@@ -296,7 +296,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
     
     // MARK: - UIScrollViewDelegate Methods
     
-    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    public func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if (decelerate) {
             self.userInteractionEnabled = false
         }
@@ -304,12 +304,12 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
         self.pagingDelegate?.scrollViewDidEndDragging?(scrollView, willDecelerate: decelerate)
     }
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         self.recenterIfNecessary()
         scrollView.userInteractionEnabled = true
     }
     
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
+    public func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         self.pagingDelegate?.scrollViewWillBeginDragging?(scrollView)
     }
     
