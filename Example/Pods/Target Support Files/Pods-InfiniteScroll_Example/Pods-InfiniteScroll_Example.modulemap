@@ -1,0 +1,6 @@
+framework module Pods_InfiniteScroll_Example {
+  umbrella header "Pods-InfiniteScroll_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
