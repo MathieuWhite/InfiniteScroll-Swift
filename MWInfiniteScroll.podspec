@@ -7,8 +7,8 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = "MHInfiniteScroll"
-  s.version          = "0.1.0"
+  s.name             = "MWInfiniteScroll"
+  s.version          = "0.1.1"
   s.summary          = "An infinite horizontal UIScrollView subclass with paging for Swift."
 
   s.homepage         = "https://github.com/MathieuWhite/InifinteScroll-Swift"

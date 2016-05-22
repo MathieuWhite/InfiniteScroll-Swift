@@ -8,7 +8,7 @@
 
 import UIKit
 
-import MHInfiniteScroll
+import MWInfiniteScroll
 
 class ViewController: UIViewController, InfiniteScrollViewDelegate {
 

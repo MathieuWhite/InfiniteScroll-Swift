@@ -6,7 +6,7 @@ use_frameworks!
 target 'InfiniteScroll_Example' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
   
-  pod 'MHInfiniteScroll', :path => '../'
+  pod 'MWInfiniteScroll', :path => '../'
 
   # Pods for InfiniteScroll_Example
 
