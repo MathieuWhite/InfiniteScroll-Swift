@@ -8,14 +8,14 @@
 
 Pod::Spec.new do |s|
   s.name             = "MWInfiniteScroll"
-  s.version          = "0.1.1"
+  s.version          = "0.1.2"
   s.summary          = "An infinite horizontal UIScrollView subclass with paging for Swift."
 
-  s.homepage         = "https://github.com/MathieuWhite/InifinteScroll-Swift"
-  s.screenshots     = "https://raw.githubusercontent.com/MathieuWhite/InifinteScroll-Swift/master/demo.gif"
+  s.homepage         = "https://github.com/MathieuWhite/InfinteScroll-Swift"
+  s.screenshots     = "https://raw.githubusercontent.com/MathieuWhite/InfinteScroll-Swift/master/demo.gif"
   s.license          = 'MIT'
   s.author           = { "Mathieu White" => "mathieuwhite91@gmail.com" }
-  s.source           = { :git => "https://github.com/MathieuWhite/InifinteScroll-Swift.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/MathieuWhite/InfinteScroll-Swift.git", :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
