@@ -35,5 +35,5 @@ Mathieu White, mathieuwhite91@gmail.com
 
 ## License
 
-MyTest is available under the MIT license. See the LICENSE file for more info.
+MWInfiniteScroll is available under the MIT license. See the LICENSE file for more info.
 
