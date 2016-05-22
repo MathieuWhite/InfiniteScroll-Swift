@@ -7,102 +7,78 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2815AD5607CEFB03FC151C3E8BAE318D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
-		373E6C5AD8332ACCC427CB05F56B8A04 /* InfiniteScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09212BE3468F1C23039C54B99312CE8B /* InfiniteScrollView.swift */; };
-		5B3F006CA714231989189126FD684DD9 /* Pods-InfiniteScroll_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C8547633E60A1396B5186187F73C2035 /* Pods-InfiniteScroll_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		610A97498DFD13222A2006CF6A2095FB /* Pods-InfiniteScroll_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9FB40571E7AF3091E737785811C4F5 /* Pods-InfiniteScroll_Example-dummy.m */; };
-		8714006F78DF42939983C5D637624896 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
-		8AD4A95C2CF39543881A02DF5E3A311F /* MHInfiniteScroll-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD11498F1B75A239F120D2B0632B8C3F /* MHInfiniteScroll-dummy.m */; };
-		B1793ADB32C1C173D8A9509B1EA85D4F /* MHInfiniteScroll-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D638557517A375A9255CC7EA54D4FCB5 /* MHInfiniteScroll-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FD5BC0C7A8B08FAD704E36951DBBC9C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
+		27485904173CCC734810640FDB353172 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */; };
+		32636029CFDA7BDD6FD9275179C2CDF8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
+		34737B983C7253F3D99B928E0E4E57B9 /* MWInfiniteScroll-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D5909E422252F09430D35A3A0EFB45A /* MWInfiniteScroll-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		79E0823E6C094BF6182E571C6610F97A /* Pods-InfiniteScroll_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9FB40571E7AF3091E737785811C4F5 /* Pods-InfiniteScroll_Example-dummy.m */; };
+		857CAD52B5495877C83CCF5C7E91E817 /* InfiniteScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3858EEBB28B98FBB7EAA353A65912898 /* InfiniteScrollView.swift */; };
+		A0FE32FE6D876ACF01538CC62BB67B1A /* MWInfiniteScroll-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3152839D8F008DAE878A0861C1423732 /* MWInfiniteScroll-dummy.m */; };
+		D03DE301C592D95635DCD835473B15D4 /* Pods-InfiniteScroll_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C8547633E60A1396B5186187F73C2035 /* Pods-InfiniteScroll_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DDA1A702D381B470109E7D6A7AF0647D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3C864FAA572A255050488E180A66B7C9 /* PBXContainerItemProxy */ = {
+		02C1601E95236C7F349829B70B407F8E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = E0CAD301017D8105FEB1362227E2D41B;
-			remoteInfo = MHInfiniteScroll;
+			remoteGlobalIDString = 3AE599E73F22401D56A8FD924FD56BCC;
+			remoteInfo = MWInfiniteScroll;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09212BE3468F1C23039C54B99312CE8B /* InfiniteScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InfiniteScrollView.swift; sourceTree = "<group>"; };
 		0F9FB40571E7AF3091E737785811C4F5 /* Pods-InfiniteScroll_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-InfiniteScroll_Example-dummy.m"; sourceTree = "<group>"; };
 		1BB3A6A6BD501E96A61A26D4179CDC98 /* Pods-InfiniteScroll_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-InfiniteScroll_Example-frameworks.sh"; sourceTree = "<group>"; };
 		2B404900B6F16CF5C4D040B40851BDA6 /* Pods-InfiniteScroll_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-InfiniteScroll_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		3EAC2CC529060E8436F175B5D6649E02 /* MHInfiniteScroll.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MHInfiniteScroll.xcconfig; sourceTree = "<group>"; };
-		48ACFC275B62240999A5CB463E59889B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4BE1BBB19F082C454F6B7ADABCBCE0AA /* Pods_InfiniteScroll_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InfiniteScroll_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		310E518FF762D51622868C28662582D7 /* MWInfiniteScroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MWInfiniteScroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3152839D8F008DAE878A0861C1423732 /* MWInfiniteScroll-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MWInfiniteScroll-dummy.m"; sourceTree = "<group>"; };
+		3858EEBB28B98FBB7EAA353A65912898 /* InfiniteScrollView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = InfiniteScrollView.swift; sourceTree = "<group>"; };
 		6124002B5653AB0D79D0F4B4073540F0 /* Pods-InfiniteScroll_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-InfiniteScroll_Example.modulemap"; sourceTree = "<group>"; };
+		75D87675A40585A88F0C89CC1E5966A2 /* MWInfiniteScroll.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MWInfiniteScroll.modulemap; sourceTree = "<group>"; };
 		7767DAE69F533535D863415A229E7C1A /* Pods-InfiniteScroll_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-InfiniteScroll_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7C46B94CBC4C725067EDF5372E5ECC17 /* MHInfiniteScroll-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MHInfiniteScroll-prefix.pch"; sourceTree = "<group>"; };
 		7CF1A8AFFB4BF36DA379E0831AF340B8 /* Pods-InfiniteScroll_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InfiniteScroll_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		7D5909E422252F09430D35A3A0EFB45A /* MWInfiniteScroll-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MWInfiniteScroll-umbrella.h"; sourceTree = "<group>"; };
 		7D6BDA6201FA98771109F1F51793C216 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1DDD0239FC9F1367CDA869770C42B7 /* Pods-InfiniteScroll_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-InfiniteScroll_Example-resources.sh"; sourceTree = "<group>"; };
-		8F3E2A7616EA125B2192CF70B19E7D0A /* MHInfiniteScroll.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = MHInfiniteScroll.modulemap; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A2A6FF208CEC4C2861F1E9D42D651453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		A7CF7EDE108DBAD273C5E15BCBBA06BF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5FB3FAE4E27A4372AF620CB4EC1B5ED /* Pods-InfiniteScroll_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-InfiniteScroll_Example.release.xcconfig"; sourceTree = "<group>"; };
-		C7B7A8F4C19E4AB8FEF3A08D233F2ADA /* MHInfiniteScroll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MHInfiniteScroll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8547633E60A1396B5186187F73C2035 /* Pods-InfiniteScroll_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-InfiniteScroll_Example-umbrella.h"; sourceTree = "<group>"; };
-		D638557517A375A9255CC7EA54D4FCB5 /* MHInfiniteScroll-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MHInfiniteScroll-umbrella.h"; sourceTree = "<group>"; };
+		D60B8E957B07D1F345820294CBD60249 /* MWInfiniteScroll-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MWInfiniteScroll-prefix.pch"; sourceTree = "<group>"; };
+		DBFA6AEAB7E16D57B726B8332D26E580 /* MWInfiniteScroll.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MWInfiniteScroll.xcconfig; sourceTree = "<group>"; };
 		E86668F20F252C440D1015B816BE59C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		FD11498F1B75A239F120D2B0632B8C3F /* MHInfiniteScroll-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MHInfiniteScroll-dummy.m"; sourceTree = "<group>"; };
+		EA3758BD53CA31120369FBE80AD7C178 /* Pods_InfiniteScroll_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InfiniteScroll_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0B1AE292614C12F7C8C601FE130B3D74 /* Frameworks */ = {
+		51F257D9651576B598E2C42463DA75B6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8714006F78DF42939983C5D637624896 /* Foundation.framework in Frameworks */,
-				FD5BC0C7A8B08FAD704E36951DBBC9C3 /* UIKit.framework in Frameworks */,
+				32636029CFDA7BDD6FD9275179C2CDF8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B9EC2EA4A685E711809CE2B93E34D416 /* Frameworks */ = {
+		C366A494ADC0C0C3923F1FF25BB76C27 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2815AD5607CEFB03FC151C3E8BAE318D /* Foundation.framework in Frameworks */,
+				DDA1A702D381B470109E7D6A7AF0647D /* Foundation.framework in Frameworks */,
+				27485904173CCC734810640FDB353172 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E5B6C1E5D62BD6BAF1E86269D8347E8 /* Support Files */ = {
+		1EC08ACA78EEED3B7FA0685B07BF08D1 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				48ACFC275B62240999A5CB463E59889B /* Info.plist */,
-				8F3E2A7616EA125B2192CF70B19E7D0A /* MHInfiniteScroll.modulemap */,
-				3EAC2CC529060E8436F175B5D6649E02 /* MHInfiniteScroll.xcconfig */,
-				FD11498F1B75A239F120D2B0632B8C3F /* MHInfiniteScroll-dummy.m */,
-				7C46B94CBC4C725067EDF5372E5ECC17 /* MHInfiniteScroll-prefix.pch */,
-				D638557517A375A9255CC7EA54D4FCB5 /* MHInfiniteScroll-umbrella.h */,
+				CC031B78D22FC15DF48A63734F908918 /* MWInfiniteScroll */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/MHInfiniteScroll";
-			sourceTree = "<group>";
-		};
-		0E5E348E29944F66129731C3E7C1872E /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				09212BE3468F1C23039C54B99312CE8B /* InfiniteScrollView.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		19CC06474C7E726F20E8AC5692729187 /* MHInfiniteScroll */ = {
-			isa = PBXGroup;
-			children = (
-				36C9AD1A53B4C2D48CF686E4C1ED705F /* Pod */,
-				0E5B6C1E5D62BD6BAF1E86269D8347E8 /* Support Files */,
-			);
-			name = MHInfiniteScroll;
-			path = ../..;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		1ED3584852EC1896B984D024973348B4 /* Pods-InfiniteScroll_Example */ = {
@@ -123,23 +99,6 @@
 			path = "Target Support Files/Pods-InfiniteScroll_Example";
 			sourceTree = "<group>";
 		};
-		36C9AD1A53B4C2D48CF686E4C1ED705F /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				0E5E348E29944F66129731C3E7C1872E /* Classes */,
-			);
-			path = Pod;
-			sourceTree = "<group>";
-		};
-		423C923AE41F219754C1570E41E4C103 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C7B7A8F4C19E4AB8FEF3A08D233F2ADA /* MHInfiniteScroll.framework */,
-				4BE1BBB19F082C454F6B7ADABCBCE0AA /* Pods_InfiniteScroll_Example.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,19 +111,38 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				7DFC463C0F8005068998073A49BFB9FA /* Development Pods */,
+				1EC08ACA78EEED3B7FA0685B07BF08D1 /* Development Pods */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
-				423C923AE41F219754C1570E41E4C103 /* Products */,
+				C24DC07038CBC5D35CE46B923A6A83D1 /* Products */,
 				D44C611B4AD93CCBEA17846CFAF24C5B /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7DFC463C0F8005068998073A49BFB9FA /* Development Pods */ = {
+		C24DC07038CBC5D35CE46B923A6A83D1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				19CC06474C7E726F20E8AC5692729187 /* MHInfiniteScroll */,
+				310E518FF762D51622868C28662582D7 /* MWInfiniteScroll.framework */,
+				EA3758BD53CA31120369FBE80AD7C178 /* Pods_InfiniteScroll_Example.framework */,
 			);
-			name = "Development Pods";
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CC031B78D22FC15DF48A63734F908918 /* MWInfiniteScroll */ = {
+			isa = PBXGroup;
+			children = (
+				D9F96E1F7DC5BB40E9E149F3863EEE36 /* Pod */,
+				EF85FC8740C1ACD71F34BA1DC29C4668 /* Support Files */,
+			);
+			name = MWInfiniteScroll;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		D1C6244294ACF9F7D37D16B3FF698CE8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				3858EEBB28B98FBB7EAA353A65912898 /* InfiniteScrollView.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		D44C611B4AD93CCBEA17846CFAF24C5B /* Targets Support Files */ = {
@@ -173,6 +151,28 @@
 				1ED3584852EC1896B984D024973348B4 /* Pods-InfiniteScroll_Example */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		D9F96E1F7DC5BB40E9E149F3863EEE36 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				D1C6244294ACF9F7D37D16B3FF698CE8 /* Classes */,
+			);
+			path = Pod;
+			sourceTree = "<group>";
+		};
+		EF85FC8740C1ACD71F34BA1DC29C4668 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A7CF7EDE108DBAD273C5E15BCBBA06BF /* Info.plist */,
+				75D87675A40585A88F0C89CC1E5966A2 /* MWInfiniteScroll.modulemap */,
+				DBFA6AEAB7E16D57B726B8332D26E580 /* MWInfiniteScroll.xcconfig */,
+				3152839D8F008DAE878A0861C1423732 /* MWInfiniteScroll-dummy.m */,
+				D60B8E957B07D1F345820294CBD60249 /* MWInfiniteScroll-prefix.pch */,
+				7D5909E422252F09430D35A3A0EFB45A /* MWInfiniteScroll-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/MWInfiniteScroll";
 			sourceTree = "<group>";
 		};
 		F302CD3B306AF1ED96B9AF31FCDBC26C /* iOS */ = {
@@ -187,58 +187,58 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		738288079A425E9DD58810ADDEA179DA /* Headers */ = {
+		2830FA7F4B1047D1C13BBF440A75AB3C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1793ADB32C1C173D8A9509B1EA85D4F /* MHInfiniteScroll-umbrella.h in Headers */,
+				34737B983C7253F3D99B928E0E4E57B9 /* MWInfiniteScroll-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8E7E408004F80FC4147D0B85E34768EA /* Headers */ = {
+		9D6F5164EC280369545DEE240AE7B2DB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B3F006CA714231989189126FD684DD9 /* Pods-InfiniteScroll_Example-umbrella.h in Headers */,
+				D03DE301C592D95635DCD835473B15D4 /* Pods-InfiniteScroll_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		E0CAD301017D8105FEB1362227E2D41B /* MHInfiniteScroll */ = {
+		0A65FB02E99454DD9D7EEA8B51EB0BC6 /* Pods-InfiniteScroll_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4B96C319CDC83A13F295E03833F0242A /* Build configuration list for PBXNativeTarget "MHInfiniteScroll" */;
+			buildConfigurationList = 6B4CA0AB6F1C5EC4F73A63E0944916C7 /* Build configuration list for PBXNativeTarget "Pods-InfiniteScroll_Example" */;
 			buildPhases = (
-				4A26D52B33C23C760C42302F1837CD7D /* Sources */,
-				0B1AE292614C12F7C8C601FE130B3D74 /* Frameworks */,
-				738288079A425E9DD58810ADDEA179DA /* Headers */,
+				D2F01710E35385AE8E694DEA22139491 /* Sources */,
+				51F257D9651576B598E2C42463DA75B6 /* Frameworks */,
+				9D6F5164EC280369545DEE240AE7B2DB /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = MHInfiniteScroll;
-			productName = MHInfiniteScroll;
-			productReference = C7B7A8F4C19E4AB8FEF3A08D233F2ADA /* MHInfiniteScroll.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		E64440BF4E7B456581D45EE1A69950E7 /* Pods-InfiniteScroll_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 91CAAF124BD9BC62727ECAEED5D62104 /* Build configuration list for PBXNativeTarget "Pods-InfiniteScroll_Example" */;
-			buildPhases = (
-				9C4150EE4EADB989B25B0FCDB10293F2 /* Sources */,
-				B9EC2EA4A685E711809CE2B93E34D416 /* Frameworks */,
-				8E7E408004F80FC4147D0B85E34768EA /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				ED71C12B29973FE4ACF6D8D721C630B5 /* PBXTargetDependency */,
+				AA975A3930017070AF6768332F656A83 /* PBXTargetDependency */,
 			);
 			name = "Pods-InfiniteScroll_Example";
 			productName = "Pods-InfiniteScroll_Example";
-			productReference = 4BE1BBB19F082C454F6B7ADABCBCE0AA /* Pods_InfiniteScroll_Example.framework */;
+			productReference = EA3758BD53CA31120369FBE80AD7C178 /* Pods_InfiniteScroll_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		3AE599E73F22401D56A8FD924FD56BCC /* MWInfiniteScroll */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 856CAEC0C286BB9D700502014BB41259 /* Build configuration list for PBXNativeTarget "MWInfiniteScroll" */;
+			buildPhases = (
+				27E18089C847867C2EFB603C748334C7 /* Sources */,
+				C366A494ADC0C0C3923F1FF25BB76C27 /* Frameworks */,
+				2830FA7F4B1047D1C13BBF440A75AB3C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MWInfiniteScroll;
+			productName = MWInfiniteScroll;
+			productReference = 310E518FF762D51622868C28662582D7 /* MWInfiniteScroll.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -258,49 +258,49 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 423C923AE41F219754C1570E41E4C103 /* Products */;
+			productRefGroup = C24DC07038CBC5D35CE46B923A6A83D1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E0CAD301017D8105FEB1362227E2D41B /* MHInfiniteScroll */,
-				E64440BF4E7B456581D45EE1A69950E7 /* Pods-InfiniteScroll_Example */,
+				3AE599E73F22401D56A8FD924FD56BCC /* MWInfiniteScroll */,
+				0A65FB02E99454DD9D7EEA8B51EB0BC6 /* Pods-InfiniteScroll_Example */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4A26D52B33C23C760C42302F1837CD7D /* Sources */ = {
+		27E18089C847867C2EFB603C748334C7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				373E6C5AD8332ACCC427CB05F56B8A04 /* InfiniteScrollView.swift in Sources */,
-				8AD4A95C2CF39543881A02DF5E3A311F /* MHInfiniteScroll-dummy.m in Sources */,
+				857CAD52B5495877C83CCF5C7E91E817 /* InfiniteScrollView.swift in Sources */,
+				A0FE32FE6D876ACF01538CC62BB67B1A /* MWInfiniteScroll-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9C4150EE4EADB989B25B0FCDB10293F2 /* Sources */ = {
+		D2F01710E35385AE8E694DEA22139491 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				610A97498DFD13222A2006CF6A2095FB /* Pods-InfiniteScroll_Example-dummy.m in Sources */,
+				79E0823E6C094BF6182E571C6610F97A /* Pods-InfiniteScroll_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		ED71C12B29973FE4ACF6D8D721C630B5 /* PBXTargetDependency */ = {
+		AA975A3930017070AF6768332F656A83 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = MHInfiniteScroll;
-			target = E0CAD301017D8105FEB1362227E2D41B /* MHInfiniteScroll */;
-			targetProxy = 3C864FAA572A255050488E180A66B7C9 /* PBXContainerItemProxy */;
+			name = MWInfiniteScroll;
+			target = 3AE599E73F22401D56A8FD924FD56BCC /* MWInfiniteScroll */;
+			targetProxy = 02C1601E95236C7F349829B70B407F8E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		034EE0D71B68E9B9FF122674C1D1A276 /* Debug */ = {
+		2D7DF49EB851513DE53E2A1523999A6D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EAC2CC529060E8436F175B5D6649E02 /* MHInfiniteScroll.xcconfig */;
+			baseConfigurationReference = DBFA6AEAB7E16D57B726B8332D26E580 /* MWInfiniteScroll.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -311,48 +311,14 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MHInfiniteScroll/MHInfiniteScroll-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MHInfiniteScroll/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/MWInfiniteScroll/MWInfiniteScroll-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MWInfiniteScroll/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MHInfiniteScroll/MHInfiniteScroll.modulemap";
+				MODULEMAP_FILE = "Target Support Files/MWInfiniteScroll/MWInfiniteScroll.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = MHInfiniteScroll;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		11B91E8EBD0B20E6287704D80268C2B8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7CF1A8AFFB4BF36DA379E0831AF340B8 /* Pods-InfiniteScroll_Example.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-InfiniteScroll_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-InfiniteScroll_Example/Pods-InfiniteScroll_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_InfiniteScroll_Example;
+				PRODUCT_NAME = MWInfiniteScroll;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -404,6 +370,68 @@
 			};
 			name = Debug;
 		};
+		5FCDEBFF196C70C4FC410B979B718F12 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBFA6AEAB7E16D57B726B8332D26E580 /* MWInfiniteScroll.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/MWInfiniteScroll/MWInfiniteScroll-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MWInfiniteScroll/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MWInfiniteScroll/MWInfiniteScroll.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = MWInfiniteScroll;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A33428F09CC93219D196DF33204F6048 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5FB3FAE4E27A4372AF620CB4EC1B5ED /* Pods-InfiniteScroll_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-InfiniteScroll_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-InfiniteScroll_Example/Pods-InfiniteScroll_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_InfiniteScroll_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		AAF678CED40D3499169D10F63CA0719E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -442,42 +470,13 @@
 			};
 			name = Release;
 		};
-		BDCF792A63D921FFF9A58267D8EF5C5A /* Release */ = {
+		AE2883CA747EAB7040040DB9C5F16B5F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EAC2CC529060E8436F175B5D6649E02 /* MHInfiniteScroll.xcconfig */;
+			baseConfigurationReference = 7CF1A8AFFB4BF36DA379E0831AF340B8 /* Pods-InfiniteScroll_Example.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/MHInfiniteScroll/MHInfiniteScroll-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MHInfiniteScroll/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MHInfiniteScroll/MHInfiniteScroll.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = MHInfiniteScroll;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D19FFB479840F5526ACDDFF512234DFB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5FB3FAE4E27A4372AF620CB4EC1B5ED /* Pods-InfiniteScroll_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -490,7 +489,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-InfiniteScroll_Example/Pods-InfiniteScroll_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -498,11 +497,12 @@
 				PRODUCT_NAME = Pods_InfiniteScroll_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -516,20 +516,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4B96C319CDC83A13F295E03833F0242A /* Build configuration list for PBXNativeTarget "MHInfiniteScroll" */ = {
+		6B4CA0AB6F1C5EC4F73A63E0944916C7 /* Build configuration list for PBXNativeTarget "Pods-InfiniteScroll_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				034EE0D71B68E9B9FF122674C1D1A276 /* Debug */,
-				BDCF792A63D921FFF9A58267D8EF5C5A /* Release */,
+				AE2883CA747EAB7040040DB9C5F16B5F /* Debug */,
+				A33428F09CC93219D196DF33204F6048 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		91CAAF124BD9BC62727ECAEED5D62104 /* Build configuration list for PBXNativeTarget "Pods-InfiniteScroll_Example" */ = {
+		856CAEC0C286BB9D700502014BB41259 /* Build configuration list for PBXNativeTarget "MWInfiniteScroll" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				11B91E8EBD0B20E6287704D80268C2B8 /* Debug */,
-				D19FFB479840F5526ACDDFF512234DFB /* Release */,
+				2D7DF49EB851513DE53E2A1523999A6D /* Debug */,
+				5FCDEBFF196C70C4FC410B979B718F12 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

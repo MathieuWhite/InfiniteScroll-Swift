@@ -1,0 +1,6 @@
+framework module MWInfiniteScroll {
+  umbrella header "MWInfiniteScroll-umbrella.h"
+
+  export *
+  module * { export * }
+}
